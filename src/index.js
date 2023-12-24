@@ -10,9 +10,11 @@ import { legacy_createStore as createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from './reducers';
 
+const store = createStore(reducer)
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Provider store={createStore(reducer)}>
+  <Provider store={store}>
   <BrowserRouter>
     <App />
   </BrowserRouter>

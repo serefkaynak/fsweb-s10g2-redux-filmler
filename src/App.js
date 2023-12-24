@@ -9,6 +9,8 @@ import AppHeader from './components/AppHeader';
 
 import AddMovieForm from './components/AddMovieForm';
 import FavoriteMovieList from './components/FavoriteMovieList';
+import { useState } from 'react';
+
 
 const App = props => {
   const displayFavorites = true;
