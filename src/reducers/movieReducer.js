@@ -6,7 +6,10 @@ const initialState = {
   appTitle: "IMDB Movie Database"
 }
 
+//- [ ] `movieReducer.js` içindeki `initialState` reducer'ın başlangıç değeri olarak atanmalıdır.
+
 const reducer = (state, action) => {
+
   switch (action.type) {
     case DELETE_MOVIE:
       return {
@@ -14,7 +17,7 @@ const reducer = (state, action) => {
         movies: state.movies.filter(item => (action.payload !== item.id))
       }
     default:
-      return state;
+      return state ;
   }
 }
 
