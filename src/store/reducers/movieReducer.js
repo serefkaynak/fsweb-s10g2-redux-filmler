@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { ADD_MOVIE, DELETE_MOVIE } from '../actions/movieActions.js';
-import movies from '../data.js'
+import movies from '../../data.js'
 
 const initialState = {
   movies: movies,
@@ -17,7 +17,7 @@ const reducer = (state = initialState, action) => {
       case ADD_MOVIE:
         return {
           ...state,
-          movies: [...state.movies, action.payload]
+          movies: [...state.movies,{...action.payload, id: Date.now()}]
         }
     default:
       return state ;

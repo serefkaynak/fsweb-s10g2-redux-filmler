@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { addMovie } from './../actions/movieActions';
+import { addMovie } from '../store/actions/movieActions';
 
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -24,14 +24,10 @@ const AddMovieForm = (props) => {
     });
   }
 
-  const handleAddMovie = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(addMovie(movie));
-    console.log(movie,"Filmi Eklendi.");
     push('/movies');
-  }
-
-  const handleSubmit = (e) => {
   }
 
   const { title, director, genre, metascore, description } = movie;
@@ -70,7 +66,6 @@ const AddMovieForm = (props) => {
             Vazgeç
           </Link>
           <button 
-          onClick={handleAddMovie} 
           type="submit" 
           className="myButton bg-green-700 hover:bg-green-600"
           > Ekle</button>
